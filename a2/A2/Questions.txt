@@ -1,0 +1,91 @@
+"""
+CSCC11 - Introduction to Machine Learning, Winter 2022, Assignment 3
+B. Chan, Z. Zhang, D. Fleet
+"""
+
+Answer The Following Questions:
+
+Visualization:
+1. Do you expect logistic regression to perform well on generic_1? Why?
+
+   Answer: Yes, because points in graph 1 are scatterd clearly into two parts.
+   There exists a clear threshold between two parts that can be produced
+   by logistic regression.
+
+   What if we apply the feature map defined in Equation (2) on the assignment handout?
+
+   Answer: It will also act as well as the original version of logistic regression.
+
+2. Do you expect logistic regression to perform well on generic_2? Why?
+
+   Answer: No, because two classes of points in graph 2 are crossly located in 4 main parts.
+   The logistic regression cannot produce a threshold that divide diagonal parts as one class.
+   Viewing these 4 parts as four-quadrant rectangular coordinate system, we cannot classify
+   different sign (second and fourth quadrant) to one class and the same sign (first and third
+   quadrant) to the other class. (Similar to Writing question 1-2-a)
+   
+
+   What if we apply the feature map defined in Equation (2) on the assignment handout?
+
+   Answer: It will act well to produce a threshold with high accuracy. (Similar to Writing
+   question 1-2-b)
+
+
+3. Do you expect logistic regression to perform well on generic_3? Why?
+
+   Ans: Yes, because three classes of points distribute respectively in three part and only
+   a small subset of them are mixed in the middle. So the regression will perform well on
+   the point that is on the side and perform badly on the point (only a small part) in the middle.
+
+4. Why can’t we directly visualize the iris dataset? What are some ways to visualize it?
+
+   Answer: This is because the iris dataset has four features, which cannot be represented
+   by plotting.
+
+
+Analysis:
+1. Generic Dataset 1: Run logistic regression without regularization and without feature map. 
+   Did you run into any numerical errors? If so, why do you think this is the case?
+
+   Ans: Yes. This is because some softmax values are too small to be recognized as 0 in float point
+   arithmetic, which then causes computer to do logarithm on zero.
+
+   Now, run logistic regression with regularization. What happens? 
+   What are the train and test accuracies?
+
+   Ans: Both are nearly 100% correct with low value of alpha_inverse and beta_inverse. As the inverse
+   goes up, the accuracy will go down.
+
+
+2. Generic Dataset 2: Run logistic regression without regularization and without feature map.
+   What are the train and test accuracies?
+   
+   Ans: Train 41%     Test 28%
+
+   Run it with feature map now, did the performance get better? Why do you think that is the case?
+
+   Ans: Yes, both go up to 100%. The original model is unable to classify the training data well while
+   the new model can.
+
+
+3. Generic Dataset 3: Run logistic regression without regularization and without feature map.
+   What are the train and test accuracies?
+
+   Ans: Train 79%     Test 82%
+   
+   What if we run it with feature map?
+
+   Ans: Train 83%     Test 82%
+
+
+4. Iris dataset: Does logistic regression without regularization and without feature map perform well on this dataset? If not, does regularization help?
+
+   Ans: Yes Train 98.3%     Test 100%
+        Regularization will lower the accuracy. As the inverse goes up, the accuracy go down.
+
+5. What are the training and validation accuracies? Do they look reasonable? Explain.
+
+  Ans: They are almost the same (only with a little difference). It looks reasonable because high
+  training accuracies will result in high validation accuracy since the model is learning under
+  the same distribution.
+

@@ -1,0 +1,59 @@
+CSCC11 - Introduction to Machine Learning, Winter 2022, Assignment 1
+B. Chan, S. Wei, D. Fleet
+===========================================================
+
+For the following questions, please answer concisely in bullet points.
+
+Q1: Dataset Size
+- In general, if I increase the size of the training set, what can we expect about the model's
+  training error? What about the test error?
+  Answer: The training error will increase as the size increase while the test error will decrease.
+  This means the model will be more reliable with bigger training sets since there are more samples
+  for learning. However, if the test data is the same as the training data, then the test error will
+  increase with increase of size. This means we cannot test what we train because the test set are
+  defined as unknown. Doing this treats the test set as a part of the training.
+
+- In general, if I increase the size of the test set, what can we expect the about the model's
+  training error? What about the test error?
+  Answer: The training error will remain unchanged since we do not modify the training set. The
+  test error will increase because we are facing a bigger test and do not have enough sample to
+  learn.
+
+- How much data should I try to obtain if I want to build a good model?
+  Building a good model needs a bigger datasets. In other word, the training set should be much bigger
+  than the test set.
+
+
+Q2: Model Complexity
+- In general, if the model is too simple, what can we conclude about the training and test errors?
+  Answer: Both the training error and test error will be large. This show that the model is underfitting
+  the training set. It means the model does not learn the general properties of the training set well.
+  Therefore, it performs poorly on both training and test set.
+
+- In general, if the model is too complex, what can we conclude about the training and test errors?
+  Answer: The training error is small. But the test error has an increasing trend. This is because
+  the model is overfitting the training set. It may treat the characteristics of the training sets
+  as the commonality of the distribution. And therefore, it loses the generalization.
+
+- For each dataset, which (degree) model gives the best performance? How did you find out?
+  Answer: dataset_1    4
+          dataset_2    3
+          dataset_3    5
+  Find all the points with the smallest error scale for one dateset. Then choose the smallest one
+  in the with the large training sets. (small training set for dataset_3 is ignored because it is same as
+  the test set)
+
+- For each dataset, what degree of polynomial do you think was used to generate the data?
+  Answer: dataset_1    4
+          dataset_2    3
+          dataset_3    5
+
+Q3: Regularization
+- In general, what does regularization do to the weights? Note: You may want to look at the weight values.
+  Answer: The weights are more and more closed to zero as the lambda term increases
+
+- In general, if we set lambda (l2_coef) to 0, what do we get?
+  Answer: We will get the ordinary least square solution because the "lambda * I" is wiped out
+
+- In general, what does increasing lambda (l2_coef) do to our loss function?
+  Answer: It will increase the result of loss function compared to OLS.

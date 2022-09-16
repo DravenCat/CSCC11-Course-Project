@@ -1,0 +1,43 @@
+"""
+CSCC11 - Introduction to Machine Learning, Winter 2022, Assignment 4 - Dimensionality Reduction
+B. Chan, S. Wei, D. Fleet
+"""
+
+Answer The Following Questions:
+
+Understanding Eigenvalues:
+1. How do the eigenvalues relate to the diagonal variances used in generating the data?
+   If the eigenvalue is high, it will contribute more variance in the total variance.
+
+2. How does the additive noise affect the curves?
+   The curve of fraction and eigenvalues will be smoother (like a circle) if the noise is bigger.
+   This means if there is bigger noise, there will be a slower increase of variances.
+
+3. Based on the plots, can you hypothesize the ways to choose the number of subspace dimensions?
+   We can choose the number of subspace dimension when there is a big decrease of the gradient of
+   change in variance and the variance is high (e.g greater than 95%)
+
+
+PCA on document data:
+1. How big is the covariance matrix used in the PCA algorithm?
+   9635 x 9635
+
+2. How long does PCA algorithm take?
+   93.95s
+
+3. Do the points from different classes look reasonably separable in this space?
+   No
+
+
+EM-PCA v.s. PCA:
+1. After running visualize_documents.py, compare the parameters you've estimated using PCA and EM-PCA. Are they identical and if not, how do they differ?
+   The parameters from EMPCA are not identical. Sometimes EMPCA parameters are on the top left
+   and sometimes on the bottom right.
+
+2. Which algorithm takes more space?
+   pca. Because covariances matrix may be huge
+
+3. How long does EM-PCA algorithm take to run compared to PCA?
+   Significantly fast. EM_PCA only takes 2.7s while PCA takes 93.95s
+
+

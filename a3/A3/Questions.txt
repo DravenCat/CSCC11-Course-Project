@@ -1,0 +1,43 @@
+"""
+CSCC11 - Introduction to Machine Learning, Winter 2022, Assignment 3
+B. Chan, E. Franco, D. Fleet
+"""
+
+Answer The Following Questions:
+
+Titanic Dataset:
+1. Is a single DT prone to over-fitting with the Titanic dataset?
+
+   Yes
+
+2. How does classification accuracy behave as a function of the number of trees?
+
+   The accuracy goes up as the number of trees goes up. The accuracy is more
+   greatly improved when the number is small (e.g. from 1 to 10) than when the
+   number is big (e.g from 90 to 100).
+
+3. Do you think the random forest was helpful?  Explain.
+
+   Yes, because it increases the accuracy and lowers the error caused by
+   overfitting of the training data of a single tree.
+
+Amazon Dataset:
+1. What is the highest accuracy you are able to achieve? Do you think you can reach an even higher
+   accuracy with just random forests?
+
+   50.6. I would like to say yes. However, if the number of trees is big enough (e.g. 1000),
+   the increase of this number will only improve the accuracy to a very little extent. (e.g. increase
+   in thousandths)
+
+2. Can you think of a better way to choose split functions as opposed to the method in _find_split?
+
+   We can choose a specific dimension instead of choosing it randomly. For example, choose the
+   dimension with the least unique values.
+
+3. How does this challenge differ from that with the Titanic dataset?
+
+   This challenge has multiple classes to be classified while the Titanic dataset has binary
+   classes. In addition, the amazon challenge is high-dimensional and has much more features to be
+   split. The training set provided is relatively small to the dataset while the titanic training set
+   has a proper size.
+
